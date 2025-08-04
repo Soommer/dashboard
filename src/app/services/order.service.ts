@@ -76,17 +76,17 @@ export class OrderService {
   this.hubConnection
     .start()
     .then(() => console.log("✅ SignalR connected"))
-    .catch(err => console.error("❌ SignalR connection error:", err));
+    .catch(err => console.error("SignalR connection error:", err));
 
 
     //Debug
 
     this.hubConnection.onclose(error => {
-      console.warn('❌ Połączenie SignalR zamknięte:', error);
+      console.warn('Połączenie SignalR zamknięte:', error);
     });
 
     this.hubConnection.onreconnecting(error => {
-      console.warn('♻️ Reconnecting to SignalR...', error);
+      console.warn('Reconnecting to SignalR...', error);
     });
     
 
